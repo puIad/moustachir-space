@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Surfaces & Lines" subtitle="Neutral fills and hairline borders" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-text); background: var(--surface-2); }
+  .row { display: flex; gap: 8px; padding: 20px; }
+  .sw { flex: 1; height: 96px; border-radius: var(--radius-sm); display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; box-sizing: border-box; border: 1px solid var(--line-200); color: var(--ink-700); }
+  .name { font: var(--fw-bold) 12px/1 var(--font-text); }
+  .hex { font: var(--fw-medium) 10px/1.4 var(--font-mono); opacity: .8; margin-top: 3px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw" style="background: var(--surface-1); box-shadow: var(--shadow-card); border-color:transparent"><span class="name">surface-1 ·&nbsp;card</span><span class="hex">#ffffff</span></div>
+    <div class="sw" style="background: var(--surface-2)"><span class="name">surface-2 ·&nbsp;app bg</span><span class="hex">#f4f6fa</span></div>
+    <div class="sw" style="background: var(--surface-3)"><span class="name">surface-3 ·&nbsp;sunken</span><span class="hex">#eef0f5</span></div>
+    <div class="sw" style="background: var(--surface-tint)"><span class="name">tint ·&nbsp;blue-50</span><span class="hex">#eaf3ff</span></div>
+    <div class="sw" style="background: var(--white); border: 2px solid var(--line-200)"><span class="name">line-200 ·&nbsp;border</span><span class="hex">#e2e5ee</span></div>
+    <div class="sw" style="background: var(--white); border: 2px solid var(--line-300)"><span class="name">line-300</span><span class="hex">#d3d8e3</span></div>
+  </div>
+</body>
+</html>

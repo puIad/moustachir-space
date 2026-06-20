@@ -1,0 +1,38 @@
+/* ===========================================================================
+   MoustachirSpace — Effects: shadows, gradients, glows, motion (ported verbatim)
+   Signature element: the GLOSSY blue gradient button.
+   =========================================================================== */
+
+:root {
+  /* ---- Elevation (soft, cool-tinted) -------------------------------------- */
+  --shadow-xs:   0 1px 2px rgba(21, 35, 63, 0.06);
+  --shadow-sm:   0 2px 8px rgba(21, 35, 63, 0.06);
+  --shadow-md:   0 8px 20px rgba(21, 35, 63, 0.08);
+  --shadow-lg:   0 16px 40px rgba(21, 35, 63, 0.12);
+  --shadow-card: 0 4px 16px rgba(21, 35, 63, 0.07);
+
+  /* ---- Brand gradients ---------------------------------------------------- */
+  --grad-primary:  linear-gradient(180deg, #5b9bf5 0%, #2e74ee 48%, #2667e8 100%);
+  --grad-primary-hover: linear-gradient(180deg, #6aa6f7 0%, #357bf0 48%, #2b6ceb 100%);
+  --gloss-overlay: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.05) 42%, rgba(0,0,0,0.06) 100%);
+  --grad-hero: radial-gradient(120% 80% at 80% 0%, #232544 0%, #161624 55%, #101020 100%);
+
+  /* ---- Button shadows ----------------------------------------------------- */
+  --shadow-btn:       0 6px 16px rgba(38, 103, 232, 0.30), inset 0 1px 0 rgba(255,255,255,0.55);
+  --shadow-btn-press: 0 2px 6px rgba(38, 103, 232, 0.28), inset 0 1px 2px rgba(0,0,0,0.18);
+
+  /* ---- Glows -------------------------------------------------------------- */
+  --glow-primary: 0 8px 24px rgba(0, 116, 255, 0.35);
+
+  /* ---- Focus -------------------------------------------------------------- */
+  --ring-focus: 0 0 0 3px var(--focus-ring);
+
+  /* ---- Motion ------------------------------------------------------------- */
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:    120ms;
+  --dur-base:    200ms;
+  --dur-slow:    320ms;
+
+  --press-scale: 0.97;
+}

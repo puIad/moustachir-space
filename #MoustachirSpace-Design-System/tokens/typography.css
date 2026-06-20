@@ -1,0 +1,51 @@
+/* ===========================================================================
+   MoustachirSpace — Typography tokens
+   Display: Space Grotesk · Text/UI: Manrope · Mono: Space Mono
+   (see fonts.css for the substitution note)
+   =========================================================================== */
+
+:root {
+  /* ---- Families ----------------------------------------------------------- */
+  --font-display: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+  --font-text:    'Manrope', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* ---- Weights ------------------------------------------------------------ */
+  --fw-regular:  400;  /* @kind font */
+  --fw-medium:   500;  /* @kind font */
+  --fw-semibold: 600;  /* @kind font */
+  --fw-bold:     700;  /* @kind font */
+  --fw-xbold:    800;  /* @kind font */
+
+  /* ---- Type scale (mobile-first product UI) ------------------------------- */
+  --fs-display:  34px;   /* hero — "Sign in to your MousSpace Account"        */
+  --fs-h1:       26px;   /* screen title — "New Lead", "Client Feedback"      */
+  --fs-h2:       21px;   /* section header — "My Missions", "Recent Activity" */
+  --fs-h3:       18px;   /* card title                                        */
+  --fs-stat:     30px;   /* big metric numbers — "14", "4.2"                  */
+  --fs-body:     15px;   /* default body / field value                       */
+  --fs-sm:       13px;   /* secondary, list meta                             */
+  --fs-label:    12px;   /* field labels, captions                           */
+  --fs-micro:    11px;   /* badges, status pills                             */
+
+  /* ---- Line heights ------------------------------------------------------- */
+  --lh-tight:   1.08;    /* @kind other */
+  --lh-snug:    1.22;    /* @kind other */
+  --lh-normal:  1.45;    /* @kind other */
+  --lh-relaxed: 1.6;     /* @kind other */
+
+  /* ---- Tracking ----------------------------------------------------------- */
+  --ls-tight:   -0.02em; /* @kind other */
+  --ls-normal:  0;       /* @kind other */
+  --ls-label:   0.01em;  /* @kind other */
+  --ls-caps:    0.08em;  /* @kind other */
+
+  /* ---- Semantic roles ----------------------------------------------------- */
+  --text-display:  var(--fw-bold) var(--fs-display)/var(--lh-tight) var(--font-display);
+  --text-h1:       var(--fw-bold) var(--fs-h1)/var(--lh-snug) var(--font-display);
+  --text-h2:       var(--fw-bold) var(--fs-h2)/var(--lh-snug) var(--font-display);
+  --text-h3:       var(--fw-semibold) var(--fs-h3)/var(--lh-snug) var(--font-display);
+  --text-stat:     var(--fw-bold) var(--fs-stat)/var(--lh-tight) var(--font-display);
+  --text-body:     var(--fw-medium) var(--fs-body)/var(--lh-normal) var(--font-text);
+  --text-label:    var(--fw-medium) var(--fs-label)/var(--lh-normal) var(--font-text);
+}

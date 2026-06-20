@@ -1,0 +1,30 @@
+<!-- @dsCard group="Brand" viewport="700x190" name="Signature — Glossy Button" subtitle="Skeuomorphic blue gradient with top sheen" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-text); background: var(--white); display: flex; align-items: center; gap: 28px; padding: 30px 32px; }
+  .btn {
+    position: relative; border: none; cursor: pointer;
+    height: 50px; padding: 0 30px; border-radius: var(--radius-pill);
+    background: var(--grad-primary); box-shadow: var(--shadow-btn);
+    color: #fff; font: var(--fw-bold) 15px/1 var(--font-text); letter-spacing: .01em;
+    overflow: hidden;
+  }
+  .btn::before { content:""; position:absolute; inset:0; border-radius:inherit; background: var(--gloss-overlay); pointer-events:none; }
+  .fab {
+    width: 56px; height: 56px; border-radius: 999px; border: none;
+    background: var(--blue-500); box-shadow: var(--glow-primary);
+    color: #fff; font-size: 28px; font-weight: 300; display:flex; align-items:center; justify-content:center;
+  }
+  .cap { font: var(--fw-medium) 11px/1.6 var(--font-mono); color: var(--ink-400); }
+</style>
+</head>
+<body>
+  <button class="btn">Log In</button>
+  <button class="fab">+</button>
+  <div class="cap">grad #5b9bf5 → #2667e8 · top sheen<br>glow shadow rgba(0,116,255,.35)<br>FAB = flat #0074ff</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* ===========================================================================
+   Branch color system — from spec/taxonomy.md §3
+   One color per branch, applied to sidebar accents, KPI accents, chart series,
+   status pills and the client-process timeline.
+   #ef4444 (red) is RESERVED for alerts/negative — never a branch color.
+   =========================================================================== */
+
+:root {
+  --branch-consulting:    #0ea5e9;  /* sky   — flagship / primary */
+  --branch-comptabilite:  #22c55e;  /* green — money / profitability */
+  --branch-communication: #ec4899;  /* pink  — creative / brand */
+  --branch-academy:       #f59e0b;  /* amber — learning / energy */
+  --branch-management:    #8b5cf6;  /* violet — authority / admin */
+  --branch-unassigned:    #64748b;  /* slate — neutral / pending */
+
+  --state-negative:       #ef4444;  /* alerts / lost / delayed — RESERVED */
+
+  /* soft tints (12% over white) for chips / backgrounds */
+  --branch-consulting-soft:    color-mix(in srgb, var(--branch-consulting) 12%, white);
+  --branch-comptabilite-soft:  color-mix(in srgb, var(--branch-comptabilite) 12%, white);
+  --branch-communication-soft: color-mix(in srgb, var(--branch-communication) 12%, white);
+  --branch-academy-soft:       color-mix(in srgb, var(--branch-academy) 12%, white);
+  --branch-management-soft:    color-mix(in srgb, var(--branch-management) 12%, white);
+  --branch-unassigned-soft:    color-mix(in srgb, var(--branch-unassigned) 12%, white);
+}

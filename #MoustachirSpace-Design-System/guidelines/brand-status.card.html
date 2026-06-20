@@ -1,0 +1,23 @@
+<!-- @dsCard group="Brand" viewport="700x150" name="Status System" subtitle="Mission & lead states" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-text); background: var(--white); display: flex; flex-wrap: wrap; align-items: center; gap: 14px; padding: 28px 32px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    height: 30px; padding: 0 13px; border-radius: var(--radius-sm);
+    font: var(--fw-bold) 12px/1 var(--font-text);
+  }
+  .dot { width: 7px; height: 7px; border-radius: 999px; }
+</style>
+</head>
+<body>
+  <span class="pill" style="background:var(--status-progress-bg); color:var(--status-progress)"><span class="dot" style="background:currentColor"></span>In Progress</span>
+  <span class="pill" style="background:var(--status-scheduled-bg); color:var(--status-scheduled)"><span class="dot" style="background:currentColor"></span>Scheduled</span>
+  <span class="pill" style="background:var(--status-delayed-bg); color:var(--status-delayed)"><span class="dot" style="background:currentColor"></span>Delayed</span>
+  <span class="pill" style="background:var(--status-done-bg); color:var(--status-done)"><span class="dot" style="background:currentColor"></span>Completed</span>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- @dsCard group="Spacing" viewport="700x150" name="Spacing Scale" subtitle="4pt base · screen padding 16, section gap 24" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-text); background: var(--white); }
+  .row { display: flex; align-items: flex-end; gap: 14px; padding: 24px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .bar { background: var(--blue-500); border-radius: 3px; width: 100%; }
+  .box { display:flex; align-items:flex-end; height: 64px; }
+  .lab { font: var(--fw-bold) 11px/1 var(--font-mono); color: var(--ink-700); }
+  .px { font: var(--fw-medium) 10px/1 var(--font-mono); color: var(--ink-400); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box"><div class="bar" style="height:4px;width:16px"></div></div><span class="lab">1</span><span class="px">4</span></div>
+    <div class="item"><div class="box"><div class="bar" style="height:8px;width:16px"></div></div><span class="lab">2</span><span class="px">8</span></div>
+    <div class="item"><div class="box"><div class="bar" style="height:12px;width:16px"></div></div><span class="lab">3</span><span class="px">12</span></div>
+    <div class="item"><div class="box"><div class="bar" style="height:16px;width:16px"></div></div><span class="lab">4</span><span class="px">16</span></div>
+    <div class="item"><div class="box"><div class="bar" style="height:24px;width:16px"></div></div><span class="lab">6</span><span class="px">24</span></div>
+    <div class="item"><div class="box"><div class="bar" style="height:32px;width:16px"></div></div><span class="lab">8</span><span class="px">32</span></div>
+    <div class="item"><div class="box"><div class="bar" style="height:48px;width:16px"></div></div><span class="lab">12</span><span class="px">48</span></div>
+    <div class="item"><div class="box"><div class="bar" style="height:64px;width:16px"></div></div><span class="lab">16</span><span class="px">64</span></div>
+  </div>
+</body>
+</html>

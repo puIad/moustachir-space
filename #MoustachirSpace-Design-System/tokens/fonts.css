@@ -1,0 +1,13 @@
+/* ===========================================================================
+   MoustachirSpace — Fonts
+   ---------------------------------------------------------------------------
+   The source app (MouSpace.pdf) ships its type as outlines — no embedded font
+   binaries. Identified by eye and SUBSTITUTED with the closest Google Fonts:
+     · Display / headings  →  Space Grotesk  (on-brand with the "Space" name,
+                               matching the geometric grotesque letterforms)
+     · Text / UI / labels  →  Manrope        (clean geometric companion sans)
+   If you have the original font files, drop them in /assets/fonts and replace
+   the @import below with @font-face rules. FLAGGED to the user.
+   =========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');

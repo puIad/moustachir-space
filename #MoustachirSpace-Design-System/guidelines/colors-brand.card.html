@@ -1,0 +1,30 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Brand — Electric Blue" subtitle="Primary scale · #0074ff is the hero" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-text); background: var(--white); }
+  .row { display: flex; gap: 0; padding: 20px; }
+  .sw { flex: 1; height: 96px; border-radius: var(--radius-sm); display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; box-sizing: border-box; }
+  .sw + .sw { margin-left: 8px; }
+  .name { font: var(--fw-bold) 12px/1 var(--font-text); }
+  .hex { font: var(--fw-medium) 10px/1.4 var(--font-mono); opacity: .8; margin-top: 3px; }
+  .dark { color: #fff; }
+  .light { color: var(--ink-900); }
+  .star { position: absolute; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw light" style="background: var(--blue-50)"><span class="name">50</span><span class="hex">#eaf3ff</span></div>
+    <div class="sw light" style="background: var(--blue-100)"><span class="name">100</span><span class="hex">#d4e7ff</span></div>
+    <div class="sw light" style="background: var(--blue-300)"><span class="name">300</span><span class="hex">#7aa8f7</span></div>
+    <div class="sw dark" style="background: var(--blue-500); box-shadow: var(--glow-primary)"><span class="name">500 ·&nbsp;Primary</span><span class="hex">#0074ff</span></div>
+    <div class="sw dark" style="background: var(--blue-600)"><span class="name">600</span><span class="hex">#2667e8</span></div>
+    <div class="sw dark" style="background: var(--blue-700)"><span class="name">700</span><span class="hex">#1b4fc4</span></div>
+    <div class="sw dark" style="background: var(--blue-800)"><span class="name">800</span><span class="hex">#163e98</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!-- @dsCard group="MoustachirSpace App" viewport="460x780" name="MoustachirSpace — Mobile App" subtitle="Login → Dashboard → New Lead → Feedback (interactive)" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoustachirSpace — Mobile App</title>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: radial-gradient(120% 90% at 50% 0%, #e9eef6 0%, #dfe5f0 100%); font-family: var(--font-text);
+         display: flex; align-items: center; justify-content: center; padding: 28px; }
+  .device { width: 390px; height: 800px; background: #0d0d14; border-radius: 50px; padding: 11px;
+            box-shadow: 0 40px 90px rgba(21,35,63,.32), 0 8px 24px rgba(21,35,63,.18); position: relative; }
+  .screen { position: relative; width: 100%; height: 100%; background: var(--white); border-radius: 40px; overflow: hidden; }
+  .notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 132px; height: 30px;
+           background: #0d0d14; border-bottom-left-radius: 18px; border-bottom-right-radius: 18px; z-index: 50; }
+  .statusbar { position: absolute; top: 0; left: 0; right: 0; height: 46px; display: flex; align-items: center; justify-content: space-between;
+               padding: 0 26px; z-index: 40; font: var(--fw-bold) 14px var(--font-text); pointer-events: none; }
+  .viewport { position: absolute; inset: 0; padding-top: 46px; display: flex; flex-direction: column; }
+  .pane { flex: 1; min-height: 0; position: relative; }
+  /* starfield used by login hero */
+  .ms-stars { background-image:
+      radial-gradient(1.5px 1.5px at 18% 24%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1.2px 1.2px at 62% 50%, rgba(255,255,255,.5), transparent),
+      radial-gradient(1.7px 1.7px at 82% 22%, rgba(255,255,255,.8), transparent),
+      radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,.5), transparent),
+      radial-gradient(1.3px 1.3px at 92% 64%, rgba(255,255,255,.55), transparent),
+      radial-gradient(1px 1px at 30% 40%, rgba(255,255,255,.4), transparent),
+      linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: auto,auto,auto,auto,auto,auto, 46px 46px, 46px 46px; }
+  .toast { position: absolute; left: 50%; bottom: 96px; transform: translateX(-50%) translateY(10px);
+           background: var(--ink-900); color: #fff; font: var(--fw-semibold) 13px var(--font-text);
+           padding: 11px 18px; border-radius: 999px; display: flex; align-items: center; gap: 8px;
+           box-shadow: var(--shadow-lg); opacity: 0; pointer-events: none; transition: all var(--dur-base) var(--ease-out); z-index: 60; }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  ::-webkit-scrollbar { width: 0; height: 0; }
+  .navwrap { flex: 0 0 auto; }
+</style>
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="notch"></div>
+    <div class="statusbar"><span>9:41</span><span style="display:flex;gap:6px;align-items:center"><i class="ph-fill ph-cell-signal-full"></i><i class="ph-fill ph-wifi-high"></i><i class="ph-fill ph-battery-high"></i></span></div>
+    <div id="app" class="viewport"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" src="LoginScreen.jsx" data-presets="react"></script>
+<script type="text/babel" src="DashboardScreen.jsx" data-presets="react"></script>
+<script type="text/babel" src="NewLeadScreen.jsx" data-presets="react"></script>
+<script type="text/babel" src="FeedbackScreen.jsx" data-presets="react"></script>
+<script type="text/babel" data-presets="react">
+const NS = window.MoustachirSpaceDesignSystem_d4c8ce;
+const { BottomNav } = NS;
+const { useState, useEffect, useRef } = React;
+
+const NAV = [
+  { key: 'home', icon: <i className="ph ph-house" />, iconActive: <i className="ph-fill ph-house" /> },
+  { key: 'calendar', icon: <i className="ph ph-calendar-blank" />, iconActive: <i className="ph-fill ph-calendar-blank" /> },
+  { key: 'feedback', icon: <i className="ph ph-chat-circle-text" />, iconActive: <i className="ph-fill ph-chat-circle-text" /> },
+  { key: 'clients', icon: <i className="ph ph-users-three" />, iconActive: <i className="ph-fill ph-users-three" /> },
+];
+
+function App() {
+  const [screen, setScreen] = useState('login');
+  const [toast, setToast] = useState('');
+  const timer = useRef(null);
+  const fire = (msg) => {
+    setToast(msg);
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setToast(''), 2200);
+  };
+
+  const showNav = screen !== 'login';
+  const navActive = screen === 'feedback' ? 'feedback' : screen === 'clients' ? 'clients' : 'home';
+
+  const onNav = (key) => {
+    if (key === 'home') setScreen('dashboard');
+    else if (key === 'feedback') setScreen('feedback');
+    else fire('Coming soon');
+  };
+
+  let pane;
+  if (screen === 'login') pane = <window.LoginScreen onLogin={() => setScreen('dashboard')} />;
+  else if (screen === 'dashboard') pane = <window.DashboardScreen onOpenMission={() => fire('Mission detail · demo')} />;
+  else if (screen === 'newlead') pane = <window.NewLeadScreen onBack={() => setScreen('dashboard')} onSubmit={() => { setScreen('dashboard'); fire('Lead added'); }} />;
+  else if (screen === 'feedback') pane = <window.FeedbackScreen onBack={() => setScreen('dashboard')} onSubmit={() => { setScreen('dashboard'); fire('Feedback saved'); }} />;
+
+  return (
+    <>
+      <div className="pane">{pane}</div>
+      {showNav && (
+        <div className="navwrap">
+          <BottomNav items={NAV} active={navActive} onSelect={onNav} onFab={() => setScreen('newlead')} />
+        </div>
+      )}
+      <div className={'toast' + (toast ? ' show' : '')}><i className="ph-fill ph-check-circle" style={{ color: 'var(--blue-400)' }} />{toast}</div>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('app')).render(<App />);
+</script>
+</body>
+</html>

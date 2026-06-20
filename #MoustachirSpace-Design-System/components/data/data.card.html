@@ -1,0 +1,80 @@
+<!-- @dsCard group="Components" viewport="700x460" name="Data Display" subtitle="Stat cards, status, rings, rows, rating, avatars" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<style>
+  body { margin: 0; background: var(--surface-2); font-family: var(--font-text); }
+  .wrap { padding: 22px; display: flex; flex-direction: column; gap: 18px; }
+  .panel { background: var(--white); border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow-card); }
+  .eyebrow { font: var(--fw-bold) 11px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-400); margin: 0 0 12px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .rows { display: flex; flex-direction: column; gap: 10px; }
+  .group { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+</style>
+</head>
+<body>
+<div id="root" class="wrap"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" data-presets="react">
+const { StatCard, StatusPill, ProgressRing, ListRow, StarRating, Avatar } = window.MoustachirSpaceDesignSystem_d4c8ce;
+const { useState } = React;
+
+function Demo() {
+  const [rating, setRating] = useState(4);
+  return (
+    <>
+      <div className="panel">
+        <p className="eyebrow">Stat cards</p>
+        <div className="stats">
+          <StatCard label="Leads Added" value="14" delta="+3 vs last week" deltaTone="up" watermark={<i className="ph-fill ph-seal-check" />} />
+          <StatCard label="Avg. Feedback" value="4.2" unit="★" delta="From 8 Clients" deltaTone="flat" watermark={<i className="ph-fill ph-medal" />} />
+        </div>
+      </div>
+
+      <div className="panel">
+        <p className="eyebrow">Status · rings · rating · avatars</p>
+        <div className="group">
+          <StatusPill status="progress" />
+          <StatusPill status="scheduled" />
+          <StatusPill status="delayed" />
+          <StatusPill status="done" />
+        </div>
+        <div className="group" style={{ marginTop: 14 }}>
+          <ProgressRing value={70} tone="blue" />
+          <ProgressRing value={87} tone="orange" />
+          <ProgressRing value={100} tone="green" />
+          <StarRating value={rating} onChange={setRating} />
+          <Avatar name="Khaled Ferroukhi" />
+          <Avatar name="Lazzouzi Lyna" ring />
+        </div>
+      </div>
+
+      <div className="panel">
+        <p className="eyebrow">List rows</p>
+        <div className="rows">
+          <ListRow icon={<i className="ph-fill ph-globe-hemisphere-west" />} iconTone="blue"
+            title="Website dev — Lazzouzi Lyna" subtitle={<StatusPill status="progress" />} meta="#MC-0418"
+            trailing={<ProgressRing value={70} tone="blue" />} onClick={()=>{}} />
+          <ListRow icon={<i className="ph-fill ph-palette" />} iconTone="ink"
+            title="Branding — Fernane Mourad I." subtitle={<StatusPill status="scheduled" />} meta="#MC-0422"
+            trailing={<i className="ph ph-caret-right" style={{ fontSize: 18, color: 'var(--ink-300)' }} />} onClick={()=>{}} />
+          <ListRow icon={<i className="ph-fill ph-graduation-cap" />} iconTone="orange"
+            title="Academy Platform — Amiar M." subtitle={<StatusPill status="delayed" />} meta="#MC-0031"
+            trailing={<ProgressRing value={87} tone="orange" />} onClick={()=>{}} />
+        </div>
+      </div>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

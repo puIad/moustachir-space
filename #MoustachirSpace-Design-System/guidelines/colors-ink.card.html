@@ -1,0 +1,26 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Ink & Navy" subtitle="Space-dark anchors and the text ramp" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-text); background: var(--white); }
+  .row { display: flex; gap: 8px; padding: 20px; }
+  .sw { flex: 1; height: 96px; border-radius: var(--radius-sm); display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; box-sizing: border-box; border: 1px solid var(--line-200); }
+  .name { font: var(--fw-bold) 12px/1 var(--font-text); }
+  .hex { font: var(--fw-medium) 10px/1.4 var(--font-mono); opacity: .85; margin-top: 3px; }
+  .dark { color: #fff; border-color: transparent; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw dark" style="background: var(--navy-900)"><span class="name">navy-900</span><span class="hex">#0d0d1b</span></div>
+    <div class="sw dark" style="background: var(--navy-800)"><span class="name">navy-800 ·&nbsp;hero</span><span class="hex">#161624</span></div>
+    <div class="sw dark" style="background: var(--ink-900)"><span class="name">ink-900 ·&nbsp;text</span><span class="hex">#15171f</span></div>
+    <div class="sw dark" style="background: var(--ink-500)"><span class="name">ink-500</span><span class="hex">#6b7180</span></div>
+    <div class="sw" style="background: var(--ink-400); color:#fff; border-color:transparent"><span class="name">ink-400 ·&nbsp;muted</span><span class="hex">#8a8f9c</span></div>
+    <div class="sw" style="background: var(--ink-300); color: var(--ink-900)"><span class="name">ink-300</span><span class="hex">#b6bbc6</span></div>
+  </div>
+</body>
+</html>

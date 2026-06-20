@@ -1,0 +1,81 @@
+/* ===========================================================================
+   MoustachirSpace — Color tokens
+   Extracted from the MousSpace mobile app (MouSpace.pdf).
+   Electric blue is the hero; deep navy ("space") anchors; warm orange accents.
+   =========================================================================== */
+
+:root {
+  /* ---- Brand: electric blue ------------------------------------------------ */
+  --blue-50:  #eaf3ff;   /* icon-chip fill, tint surfaces            */
+  --blue-100: #d4e7ff;   /* light tint                               */
+  --blue-200: #a9c8ff;
+  --blue-300: #7aa8f7;   /* glossy button highlight (top of gradient)*/
+  --blue-400: #3a8bff;
+  --blue-500: #0074ff;   /* PRIMARY — icons, stars, FAB, active      */
+  --blue-600: #2667e8;   /* glossy button base (bottom of gradient)  */
+  --blue-700: #1b4fc4;   /* pressed                                  */
+  --blue-800: #163e98;
+
+  /* ---- Ink / navy ("space") ----------------------------------------------- */
+  --navy-900: #0d0d1b;   /* logo wordmark, darkest text              */
+  --navy-800: #161624;   /* login hero panel                         */
+  --navy-700: #15233f;   /* logo mark navy                           */
+  --ink-900:  #15171f;   /* primary text                             */
+  --ink-700:  #3a3f4d;   /* secondary text                           */
+  --ink-500:  #6b7180;   /* tertiary text / sublabels                */
+  --ink-400:  #8a8f9c;   /* muted, placeholder, field labels         */
+  --ink-300:  #b6bbc6;   /* disabled text                            */
+
+  /* ---- Neutral surfaces & lines ------------------------------------------- */
+  --white:      #ffffff;
+  --surface-1:  #ffffff;   /* cards on app bg                         */
+  --surface-2:  #f4f6fa;   /* app background / inset                  */
+  --surface-3:  #eef0f5;   /* stat-card fill, pressed surfaces        */
+  --line-100:   #eceef3;   /* hairline divider                        */
+  --line-200:   #e2e5ee;   /* card border / input border             */
+  --line-300:   #d3d8e3;   /* stronger border                        */
+
+  /* ---- Accent & semantic --------------------------------------------------- */
+  --orange-500: #ff9142;   /* warm accent — delayed, progress, alerts */
+  --orange-600: #f5781f;
+  --orange-50:  #fff1e6;
+  --green-500:  #1fb255;   /* positive delta, success                 */
+  --green-50:   #e7f7ed;
+  --red-500:    #f0453e;   /* error / destructive                     */
+  --red-50:     #fdeceb;
+  --amber-500:  #f5b81f;   /* rating star (filled) alt                */
+
+  /* ---- Semantic aliases ---------------------------------------------------- */
+  --color-primary:        var(--blue-500);
+  --color-primary-deep:   var(--blue-600);
+  --color-on-primary:     var(--white);
+
+  --bg-app:               var(--surface-2);
+  --bg-elevated:          var(--surface-1);
+  --bg-sunken:            var(--surface-3);
+  --bg-hero:              var(--navy-800);
+
+  --text-primary:         var(--ink-900);
+  --text-secondary:       var(--ink-500);
+  --text-muted:           var(--ink-400);
+  --text-on-hero:         var(--white);
+  --text-link:            var(--blue-500);
+
+  --surface-card:         var(--surface-1);
+  --surface-tint:         var(--blue-50);
+  --border-card:          var(--line-200);
+  --border-input:         var(--line-200);
+  --divider:              var(--line-100);
+
+  /* Status (missions / leads / feedback) */
+  --status-progress:      var(--blue-500);
+  --status-progress-bg:   var(--blue-50);
+  --status-scheduled:     var(--ink-400);
+  --status-scheduled-bg:  var(--surface-3);
+  --status-delayed:       var(--orange-500);
+  --status-delayed-bg:    var(--orange-50);
+  --status-done:          var(--green-500);
+  --status-done-bg:       var(--green-50);
+
+  --focus-ring:           color-mix(in srgb, var(--blue-500) 38%, transparent);
+}

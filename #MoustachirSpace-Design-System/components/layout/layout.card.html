@@ -1,0 +1,68 @@
+<!-- @dsCard group="Components" viewport="700x430" name="Layout" subtitle="Headers, cards, bottom nav + FAB" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+  body { margin: 0; background: var(--surface-2); font-family: var(--font-text); }
+  .wrap { padding: 22px; display: flex; flex-direction: column; gap: 18px; }
+  .phone { background: var(--surface-2); border-radius: var(--radius-xl); padding: 6px; box-shadow: var(--shadow-card); max-width: 380px; }
+  .sheet { background: var(--white); border-radius: 18px; overflow: hidden; }
+  .eyebrow { font: var(--fw-bold) 11px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-400); margin: 0 0 10px; }
+</style>
+</head>
+<body>
+<div id="root" class="wrap"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" data-presets="react">
+const { AppHeader, IconButton, Avatar, Card, BottomNav, StatusPill } = window.MoustachirSpaceDesignSystem_d4c8ce;
+const { useState } = React;
+const NAV = [
+  { key:'home', icon:<i className="ph ph-house" />, iconActive:<i className="ph-fill ph-house" /> },
+  { key:'calendar', icon:<i className="ph ph-calendar-blank" />, iconActive:<i className="ph-fill ph-calendar-blank" /> },
+  { key:'feedback', icon:<i className="ph ph-chat-circle-text" />, iconActive:<i className="ph-fill ph-chat-circle-text" /> },
+  { key:'clients', icon:<i className="ph ph-users-three" />, iconActive:<i className="ph-fill ph-users-three" /> },
+];
+
+function Demo() {
+  const [tab, setTab] = useState('home');
+  return (
+    <>
+      <div className="phone">
+        <div className="sheet">
+          <AppHeader variant="greeting" name="Khaled Ferroukhi"
+            avatar={<Avatar name="Khaled Ferroukhi" />}
+            trailing={<IconButton variant="plain" badge ariaLabel="Alerts"><i className="ph-fill ph-bell" /></IconButton>} />
+          <div style={{ height: 1, background: 'var(--line-100)' }} />
+          <AppHeader variant="title" title="New Lead"
+            leading={<IconButton variant="plain" ariaLabel="Back"><i className="ph ph-arrow-left" /></IconButton>}
+            trailing={<IconButton variant="plain" badge ariaLabel="Alerts"><i className="ph-fill ph-bell" /></IconButton>} />
+        </div>
+      </div>
+
+      <div style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
+        <Card title="Recent Activity" action={<span style={{ font:'var(--fw-bold) 13px var(--font-text)', color:'var(--blue-500)' }}>2</span>} style={{ flex:1, minWidth:200 }}>
+          <div style={{ font:'var(--fw-medium) 14px var(--font-text)', color:'var(--ink-500)' }}>White surface · shadow-card</div>
+        </Card>
+        <Card tone="tint" style={{ flex:1, minWidth:160 }}>
+          <div style={{ font:'var(--fw-bold) 14px var(--font-text)', color:'var(--blue-700)', marginBottom:6 }}>Tint surface</div>
+          <StatusPill status="progress" />
+        </Card>
+      </div>
+
+      <div className="phone" style={{ padding:0, background:'transparent', boxShadow:'none', maxWidth:380 }}>
+        <BottomNav items={NAV} active={tab} onSelect={setTab} onFab={()=>{}} />
+      </div>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

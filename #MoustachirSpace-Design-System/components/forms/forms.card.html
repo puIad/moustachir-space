@@ -1,0 +1,86 @@
+<!-- @dsCard group="Components" viewport="700x620" name="Forms" subtitle="Buttons, fields, chips, segmented, search" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+  body { margin: 0; background: var(--surface-2); font-family: var(--font-text); }
+  .wrap { padding: 22px; display: flex; flex-direction: column; gap: 20px; }
+  .group { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .col { display: flex; flex-direction: column; gap: 12px; }
+  .panel { background: var(--white); border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow-card); }
+  .eyebrow { font: var(--fw-bold) 11px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-400); margin: 0 0 12px; }
+</style>
+</head>
+<body>
+<div id="root" class="wrap"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" data-presets="react">
+const { Button, IconButton, TextField, Textarea, Select, Chip, SegmentedControl, SearchField } = window.MoustachirSpaceDesignSystem_d4c8ce;
+const { useState } = React;
+
+function Demo() {
+  const [show, setShow] = useState(false);
+  const [mode, setMode] = useState('Verbally');
+  const [tags, setTags] = useState({ q: true, t: false });
+  const [src, setSrc] = useState('Event / Expo');
+  const [q, setQ] = useState('');
+  return (
+    <>
+      <div className="panel">
+        <p className="eyebrow">Buttons</p>
+        <div className="group">
+          <Button variant="primary">Log In</Button>
+          <Button variant="secondary">Cancel</Button>
+          <Button variant="ghost">Skip</Button>
+          <Button variant="danger">Delete</Button>
+          <Button variant="primary" disabled>Disabled</Button>
+        </div>
+        <div className="group" style={{ marginTop: 12 }}>
+          <Button size="sm" variant="primary">Small</Button>
+          <Button size="md" variant="primary" leadingIcon={<i className="ph-fill ph-paper-plane-tilt" />}>Submit</Button>
+          <Button size="lg" variant="primary">Large</Button>
+          <IconButton variant="solid" badge ariaLabel="Bell"><i className="ph-fill ph-bell" /></IconButton>
+          <IconButton variant="tint" ariaLabel="Back"><i className="ph ph-arrow-left" /></IconButton>
+          <IconButton variant="ghost" ariaLabel="More"><i className="ph ph-dots-three" /></IconButton>
+        </div>
+      </div>
+
+      <div className="panel col">
+        <p className="eyebrow">Fields</p>
+        <TextField label="Full Name" value="Houssem Eddine Bouslimane" onChange={()=>{}} />
+        <div style={{ display:'flex', gap:12 }}>
+          <TextField label="Password" type={show?'text':'password'} value="secret123" onChange={()=>{}}
+            trailingIcon={<i className={show?'ph ph-eye-slash':'ph ph-eye'} />} onTrailingClick={()=>setShow(!show)} />
+          <TextField label="Email" value="916@916" onChange={()=>{}} error="Enter a valid email" />
+        </div>
+        <Select label="Lead Source" value={src} onChange={e=>setSrc(e.target.value)}
+          leadingIcon={<i className="ph ph-megaphone-simple" />}
+          options={['Event / Expo','Referral','Website','Cold Outreach']} />
+        <Textarea label="Notes" rows={2} value="High-priority lead from the spring expo." onChange={()=>{}} />
+      </div>
+
+      <div className="panel col">
+        <p className="eyebrow">Selection</p>
+        <SegmentedControl value={mode} onChange={setMode} options={['Verbally','Online Chat']} />
+        <div className="group">
+          <Chip selected={tags.q} onToggle={v=>setTags({...tags,q:v})}>High Quality</Chip>
+          <Chip selected={tags.t} onToggle={v=>setTags({...tags,t:v})}>On Time</Chip>
+          <Chip tone="orange" selected={false} onToggle={()=>{}}>Delays</Chip>
+          <Chip tone="ink" selected={false} onToggle={()=>{}}>Other</Chip>
+        </div>
+        <SearchField value={q} onChange={e=>setQ(e.target.value)} onClear={()=>setQ('')} placeholder="Name or mission ID…" />
+      </div>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>

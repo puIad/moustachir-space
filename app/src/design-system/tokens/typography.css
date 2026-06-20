@@ -1,0 +1,50 @@
+/* ===========================================================================
+   MoustachirSpace — Typography tokens (ported verbatim)
+   Display: Space Grotesk · Text/UI: Manrope · Mono: Space Mono
+   =========================================================================== */
+
+:root {
+  /* ---- Families ----------------------------------------------------------- */
+  --font-display: 'Space Grotesk', 'Manrope', system-ui, sans-serif;
+  --font-text:    'Manrope', system-ui, -apple-system, sans-serif;
+  --font-mono:    'Space Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* ---- Weights ------------------------------------------------------------ */
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-xbold:    800;
+
+  /* ---- Type scale --------------------------------------------------------- */
+  --fs-display:  34px;
+  --fs-h1:       26px;
+  --fs-h2:       21px;
+  --fs-h3:       18px;
+  --fs-stat:     30px;
+  --fs-body:     15px;
+  --fs-sm:       13px;
+  --fs-label:    12px;
+  --fs-micro:    11px;
+
+  /* ---- Line heights ------------------------------------------------------- */
+  --lh-tight:   1.08;
+  --lh-snug:    1.22;
+  --lh-normal:  1.45;
+  --lh-relaxed: 1.6;
+
+  /* ---- Tracking ----------------------------------------------------------- */
+  --ls-tight:   -0.02em;
+  --ls-normal:  0;
+  --ls-label:   0.01em;
+  --ls-caps:    0.08em;
+
+  /* ---- Semantic roles ----------------------------------------------------- */
+  --text-display:  var(--fw-bold) var(--fs-display)/var(--lh-tight) var(--font-display);
+  --text-h1:       var(--fw-bold) var(--fs-h1)/var(--lh-snug) var(--font-display);
+  --text-h2:       var(--fw-bold) var(--fs-h2)/var(--lh-snug) var(--font-display);
+  --text-h3:       var(--fw-semibold) var(--fs-h3)/var(--lh-snug) var(--font-display);
+  --text-stat:     var(--fw-bold) var(--fs-stat)/var(--lh-tight) var(--font-display);
+  --text-body:     var(--fw-medium) var(--fs-body)/var(--lh-normal) var(--font-text);
+  --text-label:    var(--fw-medium) var(--fs-label)/var(--lh-normal) var(--font-text);
+}

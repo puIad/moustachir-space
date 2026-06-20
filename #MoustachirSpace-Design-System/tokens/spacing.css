@@ -1,0 +1,37 @@
+/* ===========================================================================
+   MoustachirSpace — Spacing, radii & layout tokens
+   8pt-ish base with a couple of half-steps for dense mobile UI.
+   =========================================================================== */
+
+:root {
+  /* ---- Spacing scale ------------------------------------------------------ */
+  --space-0:   0;
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;   /* default gutter / screen padding              */
+  --space-5:   20px;
+  --space-6:   24px;   /* section gap                                  */
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+  --space-16:  64px;
+
+  /* ---- Radii -------------------------------------------------------------- */
+  --radius-xs:    6px;    /* chips, small badges                       */
+  --radius-sm:    10px;   /* inputs, status pills (squared)            */
+  --radius-md:    14px;   /* field cards, list rows                    */
+  --radius-lg:    18px;   /* cards, stat cards                         */
+  --radius-xl:    24px;   /* hero panel, sheets                        */
+  --radius-pill:  999px;  /* buttons, segmented control, FAB           */
+
+  /* ---- Layout ------------------------------------------------------------- */
+  --screen-pad:    var(--space-4);
+  --section-gap:   var(--space-6);
+  --card-pad:      var(--space-4);
+  --field-h:       54px;   /* floating-label field height */
+  --control-h:     48px;   /* buttons */
+  --tap-min:       44px;   /* minimum hit target */
+  --nav-h:         64px;   /* bottom tab bar */
+  --content-max:   420px;  /* phone content width */
+}

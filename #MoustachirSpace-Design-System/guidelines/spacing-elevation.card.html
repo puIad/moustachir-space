@@ -1,0 +1,24 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="Elevation" subtitle="Soft cool-tinted shadows" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-text); background: var(--surface-2); }
+  .row { display: flex; gap: 22px; padding: 28px 24px; }
+  .item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .box { width: 100%; height: 76px; background: var(--white); border-radius: var(--radius-lg); }
+  .lab { font: var(--fw-bold) 11px/1 var(--font-mono); color: var(--ink-700); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box" style="box-shadow: var(--shadow-xs)"></div><span class="lab">xs</span></div>
+    <div class="item"><div class="box" style="box-shadow: var(--shadow-sm)"></div><span class="lab">sm</span></div>
+    <div class="item"><div class="box" style="box-shadow: var(--shadow-card)"></div><span class="lab">card</span></div>
+    <div class="item"><div class="box" style="box-shadow: var(--shadow-md)"></div><span class="lab">md</span></div>
+    <div class="item"><div class="box" style="box-shadow: var(--shadow-lg)"></div><span class="lab">lg</span></div>
+  </div>
+</body>
+</html>
