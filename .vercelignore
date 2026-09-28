@@ -1,0 +1,7 @@
+# CLI deploys upload only what the build needs (app/ imports ../spec).
+/*
+!/app
+!/spec
+/app/node_modules
+/app/dist
+/app/.env*

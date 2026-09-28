@@ -2,3 +2,6 @@
 warehouse/
 app/src/seed/
 Problem Statement/BASE DE DONNES DES CLIENTS/
+
+# Vercel CLI link (local)
+.vercel

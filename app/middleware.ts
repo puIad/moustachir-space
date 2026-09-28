@@ -10,6 +10,8 @@
  */
 import { next } from '@vercel/functions';
 
+export const config = { runtime: 'nodejs' };
+
 const COOKIE = 'ms_session';
 const SESSION_DAYS = 7;
 const enc = new TextEncoder();
