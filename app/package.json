@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
+    "@vercel/functions": "^3.9.9",
     "chart.js": "^4.4.4",
     "dexie": "^4.0.8",
     "i18next": "^23.15.1",

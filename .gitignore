@@ -1,0 +1,4 @@
+# Client data (PII) — kept local only, never pushed. Deploy with `vercel --prod` from app/.
+warehouse/
+app/src/seed/
+Problem Statement/BASE DE DONNES DES CLIENTS/
