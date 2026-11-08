@@ -1,0 +1,18 @@
+# moustachir-space
+
+> BI and performance platform built for the Moustachir data challenge. A Python pipeline and KPI layer feed a Streamlit dashboard (src/), and an offline-first React 18 + TypeScript app (app/, Dexie, Zustand, Chart.js) implements the same KPIs as pure functions. spec/ holds the KPI contract. Real data is separated from projections, and personal data is masked by default.
+
+## Docs
+
+- [README.md](https://github.com/puIad/moustachir-space/blob/main/README.md): overview, structure, how to run both apps
+- [docs/DEMO_SCRIPT.md](https://github.com/puIad/moustachir-space/blob/main/docs/DEMO_SCRIPT.md): 5 to 8 minute jury demo script
+- [spec/kpi-definitions.md](https://github.com/puIad/moustachir-space/blob/main/spec/kpi-definitions.md): KPI formulas, source fields, real vs simulated
+- [spec/entities.ts](https://github.com/puIad/moustachir-space/blob/main/spec/entities.ts): entity types
+- [app/README.md](https://github.com/puIad/moustachir-space/blob/main/app/README.md): React app setup and build
+
+## Source
+
+- [src/pipeline.py](https://github.com/puIad/moustachir-space/blob/main/src/pipeline.py): data pipeline
+- [src/kpis.py](https://github.com/puIad/moustachir-space/blob/main/src/kpis.py): KPI computation
+- [src/app.py](https://github.com/puIad/moustachir-space/blob/main/src/app.py): Streamlit dashboard
+- [app/src](https://github.com/puIad/moustachir-space/tree/main/app/src): React app: screens, store, i18n, design system
